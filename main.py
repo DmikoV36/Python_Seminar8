@@ -61,23 +61,25 @@ while True:
         ctrl.ent_stud(ent_stud)
         lvl = 0
     elif lvl == 2:
-        msg = "Выберите данные для редактирования: "
+        msg = "Введите ФИО ученика, чьи данные нужно редактировать: "
         title = "Редактирование данных об ученике"
-        choices = ["Фамилия","Имя Отчество","Дата рождения","Класс","Классный руководитель","Адрес","Телефон родителя","Средняя успеваемость"]
-        overwriting = multchoicebox(msg, title, choices)
-        if overwriting == None:
+        fieldNames  =  ["Фамилия","Имя Отчество"]
+        ch_stud = []
+        ch_stud = multenterbox(msg, title, fieldNames)
+        if ch_stud == None:
             lvl = 0
         elif choices[3]:
-            msg = "Введите информацию об ученике: "
-            title = "Ввод информации об ученике"
-            #fieldNames  =  overwriting
-            edit_stud = []
-            edit_stud = multenterbox(msg, title, overwriting)
-            print(overwriting)
-            if edit_stud == False:
-                lvl = 2
-            else:
-                print(edit_stud)
+            lvl = 10
+            # msg = "Введите информацию об ученике: "
+            # title = "Ввод информации об ученике"
+            # #fieldNames  =  overwriting
+            # edit_stud = []
+            # edit_stud = multenterbox(msg, title, overwriting)
+            # print(overwriting)
+            # if edit_stud == False:
+            #     lvl = 2
+            # else:
+            #     print(edit_stud)
     elif lvl == 3:
         msg = "Выберите шаблон поиска: "
         title = "Поиск информации"
@@ -161,3 +163,22 @@ while True:
             pass
         elif score == choices[2]:
             pass
+    elif lvl == 10:
+        msg = "Выберите данные для редактирования: "
+        title = "Редактирование данных об ученике"
+        choices = ["Дата рождения","Класс","Классный руководитель","Адрес","Телефон родителя","Средняя успеваемость"]
+        overwriting = multchoicebox(msg, title, choices)
+        if overwriting == None:
+            lvl = 0
+        elif choices[3]:
+            msg = "Введите информацию об ученике: "
+            title = "Ввод информации об ученике"
+            #fieldNames  =  overwriting
+            edit_stud = []
+            edit_stud = multenterbox(msg, title, overwriting)
+            #print(overwriting)
+            if edit_stud == False:
+                lvl = 2
+            else:
+                msgbox(ctrl.edit_stud(ch_stud,overwriting,edit_stud), 'Отчет')
+                lvl = 2
