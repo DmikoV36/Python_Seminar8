@@ -10,8 +10,10 @@
         # по фио класс руковод???
 
 from easygui import *
+import control as ctrl
 
 lvl = 0
+ctrl.load()
 
 while True:
     if lvl == 0:
@@ -49,13 +51,14 @@ while True:
                 lvl = 0
                 break
             errmsg = ""
-            for i in range (len(fieldNames)-1):
+            for i in range (len(fieldNames)):
                 if ent_stud[i].strip() == "":
                      errmsg = errmsg + ('"%s" это обязательные поля.\n\n' % fieldNames[i])
             if errmsg == "":
                 break # no problems found
             ent_stud = multenterbox(errmsg, title,  fieldNames, ent_stud)
         print (f"Инфомация: {ent_stud} добавлена в систему.")
+        ctrl.ent_stud(ent_stud)
         lvl = 0
     elif lvl == 2:
         msg = "Выберите данные для редактирования: "
