@@ -14,10 +14,18 @@ def save():
     print("Наша база была успешно сохранена в файле student_data_base.json")
 
 def ent_stud(list):
-    with open("student_data_base.json", "w", encoding="utf-8") as fh:
-        data_base.append(list)
-        fh.write(json.dumps(data_base,ensure_ascii=False))
-    print (f"Инфомация: {ent_stud} добавлена в систему.")
+    ret_msg = f"Инфомация: {list} добавлена в систему."
+    flag = True
+    for i in range(len(data_base)):
+        if data_base[i][0] == list[0] and data_base[i][1] == list[1]:
+           ret_msg = f"Ученик {list[0]} {list[1]} уже есть в системе"
+           flag = False
+           break
+    if flag:
+        with open("student_data_base.json", "w", encoding="utf-8") as fh:
+            data_base.append(list)
+            fh.write(json.dumps(data_base,ensure_ascii=False))
+    return ret_msg
 
 def dict(text):
     if text == "Дата рождения":

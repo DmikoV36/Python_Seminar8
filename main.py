@@ -57,8 +57,7 @@ while True:
             if errmsg == "":
                 break # no problems found
             ent_stud = multenterbox(errmsg, title,  fieldNames, ent_stud)
-        print (f"Инфомация: {ent_stud} добавлена в систему.")
-        ctrl.ent_stud(ent_stud)
+        msgbox(ctrl.ent_stud(ent_stud), 'Отчет')
         lvl = 0
     elif lvl == 2:
         msg = "Введите ФИО ученика, чьи данные нужно редактировать: "
@@ -70,16 +69,6 @@ while True:
             lvl = 0
         elif choices[3]:
             lvl = 10
-            # msg = "Введите информацию об ученике: "
-            # title = "Ввод информации об ученике"
-            # #fieldNames  =  overwriting
-            # edit_stud = []
-            # edit_stud = multenterbox(msg, title, overwriting)
-            # print(overwriting)
-            # if edit_stud == False:
-            #     lvl = 2
-            # else:
-            #     print(edit_stud)
     elif lvl == 3:
         msg = "Выберите шаблон поиска: "
         title = "Поиск информации"
@@ -99,7 +88,6 @@ while True:
             lvl = 9
         elif chois_sample == None:
             lvl = 0
-        # elif choice == choices[1]:
     elif lvl == 4:
         msg = "Введите ФИО ученика: "
         title = "Информация об ученике"
@@ -173,10 +161,8 @@ while True:
         elif choices[3]:
             msg = "Введите информацию об ученике: "
             title = "Ввод информации об ученике"
-            #fieldNames  =  overwriting
             edit_stud = []
             edit_stud = multenterbox(msg, title, overwriting)
-            #print(overwriting)
             if edit_stud == False:
                 lvl = 2
             else:
