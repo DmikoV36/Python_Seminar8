@@ -54,22 +54,21 @@ def edit_stud(list1, list2, list3):
 def search_info_stud(list1): # для lvl == 4:
     ret_msg = "Ученик не найден в системе."
     for i in range(len(data_base)):
-        if data_base[i][0] == list1[0] and data_base[i][1] == list1[1]:
+        if data_base[i][0] == list1[0] and (data_base[i][1] == list1[1] or list1[1] == ''):
             ret_msg = data_base[i]
-            print(ret_msg)
     return ret_msg
 
 def search_info_classroom_teacher_stud(list1): # для lvl == 5:
     ret_msg = "Ученик не найден в системе."
     for i in range(len(data_base)):
-        if data_base[i][0] == list1[0] and data_base[i][1] == list1[1]:
+        if data_base[i][0] == list1[0] and (data_base[i][1] == list1[1] or list1[1] == ''):
             ret_msg = data_base[i][4]
     return ret_msg
 
 def search_info_phone_perents_stud(list1): # для lvl == 6:
     ret_msg = "Ученик не найден в системе."
     for i in range(len(data_base)):
-        if data_base[i][0] == list1[0] and data_base[i][1] == list1[1]:
+        if data_base[i][0] == list1[0] and (data_base[i][1] == list1[1] or list1[1] == ''):
             ret_msg = data_base[i][6]
     return ret_msg
 
@@ -86,21 +85,24 @@ def search_info_class_stud(group): # для lvl == 7:
 
 def search_info_birthday_mounth_stud(list1): # для lvl == 8:
     ret_msg = "Такого месяца не существует."
-    if list1.isdigit() and (1 < int(list1) < 12):
+    mounth = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
+    if list1.isdigit() and (0 < int(list1) < 13):
         list1 = int(list1)
+    elif list1.lower() in mounth:
+        list1 = mounth.index(list1) + 1
     else:
-        mounth = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
-        list1 = list1.lower()
-        if list1 in mounth:
-            list1 = mounth.index(list1) + 1
+        return ret_msg
     birthday = []
     for i in range(len(data_base)):
         data_birthday_stud = data_base[i][2]
+        print(data_birthday_stud[3:5])
         if int(data_birthday_stud[3:5]) == list1:
             print(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][2])
             birthday.append(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][2])
     print(birthday)
-    if birthday != []:
+    if birthday == []:
+        ret_msg = "Именинников в этом месяце нет"
+    else:
         ret_msg = birthday
     return ret_msg
 
