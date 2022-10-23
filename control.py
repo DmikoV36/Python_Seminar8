@@ -103,3 +103,24 @@ def search_info_birthday_mounth_stud(list1): # для lvl == 8:
     if birthday != []:
         ret_msg = birthday
     return ret_msg
+
+def search_five_stud(): # для lvl == 9 отличники:
+    ret_msg = []
+    for i in range(len(data_base)):
+        if data_base[i][7] == "5":
+            ret_msg.append(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][3])
+    return ret_msg
+
+def search_four_stud(): # для lvl == 9 хорошисты:
+    ret_msg = []
+    for i in range(len(data_base)):
+        if data_base[i][7] == "4":
+            ret_msg.append(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][3])
+    return ret_msg
+
+def search_three_stud(): # для lvl == 9 троечники:
+    ret_msg = []
+    for i in range(len(data_base)):
+        if data_base[i][7] == "3":
+            ret_msg.append(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][3])
+    return ret_msg

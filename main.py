@@ -153,11 +153,14 @@ while True:
         if score == None:
             lvl = 3
         elif score == choices[0]:
-            pass
+            msgbox(ctrl.search_five_stud(), 'Отличники')
+            lvl = 0
         elif score == choices[1]:
-            pass
+            msgbox(ctrl.search_four_stud(), 'Хорошисты')
+            lvl = 0
         elif score == choices[2]:
-            pass
+            msgbox(ctrl.search_three_stud(), 'Троечники')
+            lvl = 0
     elif lvl == 10:
         msg = "Выберите данные для редактирования: "
         title = "Редактирование данных об ученике"
