@@ -47,22 +47,4 @@ data_base = [["Иванов", "Вадим Александрович", "12.03.20
     ["Антонова", "Марина Викторовна", "19.04.2010", "7Б", "Андреева Алла Сергеевна", "Москва, ул.Пражская, 13-45", "89163655652", "5"], 
     ["Васин", "Василий Антонович", "23.10.2008", "9А", "Мытько Елена Станиславовна", "Москва, пр.Андролова, 96/4-97", "89151455857", "3"]]
 # print(len(data_base))
-def search_info_class_stud(): # для lvl == 7:
-    ret_msg = "Класс не найден в системе."
-    all_list = []
-    i = 0
-    j = 0
-    # for i in range(len(data_base)):
-    #     for j in range(len(data_base)):
-    #         if data_base[i][3] == data_base[j][3]:
-    #             class_list = [data_base[i][3], data_base[i][0], data_base[i][1], data_base[j][0], data_base[j][1]]
-    #     all_list.append(class_list)
-    # print(all_list)
- 
-    for i in range(len(data_base)):
-        for j in range(len(data_base)):
-            if data_base[i][3] == data_base[j][3]:
-                class_list = [data_base[i][3], data_base[i][0], data_base[i][1], data_base[j][0], data_base[j][1]]
-                print(f"Список класса {data_base[i][3]}: ", class_list)
-                     
-    return ret_msg
+

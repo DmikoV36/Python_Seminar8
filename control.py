@@ -77,9 +77,29 @@ def search_info_class_stud(group): # для lvl == 7:
     ret_msg = "Класс не найден в системе."
     all_list = []
     for i in range(len(data_base)):
-        if group == data_base[i][3]:
-            # class_list = [data_base[i][3], data_base[i][0], data_base[i][1]]
-            all_list.append(data_base[i][0], data_base[i][1])
+        if group[0] == data_base[i][3]:
+            class_list = data_base[i][0] + " " + data_base[i][1]
+            all_list.append(class_list)
     if all_list != []:
         ret_msg = all_list             
+    return ret_msg
+
+def search_info_birthday_mounth_stud(list1): # для lvl == 8:
+    ret_msg = "Такого месяца не существует."
+    if list1.isdigit() and (1 < int(list1) < 12):
+        list1 = int(list1)
+    else:
+        mounth = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
+        list1 = list1.lower()
+        if list1 in mounth:
+            list1 = mounth.index(list1) + 1
+    birthday = []
+    for i in range(len(data_base)):
+        data_birthday_stud = data_base[i][2]
+        if int(data_birthday_stud[3:5]) == list1:
+            print(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][2])
+            birthday.append(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][2])
+    print(birthday)
+    if birthday != []:
+        ret_msg = birthday
     return ret_msg

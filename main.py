@@ -130,7 +130,7 @@ while True:
         if sample4 == None:
             lvl = 3
         else:
-            msgbox({ctrl.search_info_class_stud(sample4)}, f'Ученики {sample4} класса')
+            msgbox(ctrl.search_info_class_stud(sample4), 'Ученики класса')
             lvl = 0
     elif lvl == 8:
         msg = "Введите месяц: "
@@ -138,10 +138,13 @@ while True:
         fieldNames  =  ["Месяц"]
         sample5 = []
         sample5 = multenterbox(msg, title, fieldNames)
+        print(sample5)
+        print(type(sample5[0]))
         if sample5 == None:
             lvl = 3
         else:
-            pass
+            msgbox(ctrl.search_info_birthday_mounth_stud(sample5[0]), 'Именнинники месяца')
+            lvl = 0
     elif lvl == 9:
         msg = "Выберите категорию: "
         title = "Выборка по успеваемости"
