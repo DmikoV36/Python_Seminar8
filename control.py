@@ -41,6 +41,15 @@ def dict(text):
     elif text == "Средняя успеваемость":
         return 7
 
+def del_stud(list1):
+    ret_msg = "Ученик не найден в системе."
+    for i in range(len(data_base)):
+        if data_base[i][0] == list1[0] and data_base[i][1] == list1[1]:
+            data_base.pop(i)
+            save()
+            ret_msg = "Инофрмация об ученике удалена из системы."
+    return ret_msg
+
 def edit_stud(list1, list2, list3):
     ret_msg = "Ученик не найден в системе."
     for i in range(len(data_base)):
@@ -95,11 +104,9 @@ def search_info_birthday_mounth_stud(list1): # для lvl == 8:
     birthday = []
     for i in range(len(data_base)):
         data_birthday_stud = data_base[i][2]
-        print(data_birthday_stud[3:5])
         if int(data_birthday_stud[3:5]) == list1:
             print(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][2])
             birthday.append(data_base[i][0]+' '+data_base[i][1]+' '+data_base[i][2])
-    print(birthday)
     if birthday == []:
         ret_msg = "Именинников в этом месяце нет"
     else:

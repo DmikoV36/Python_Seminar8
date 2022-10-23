@@ -32,7 +32,7 @@ while True:
             if del_stud == False:
                 lvl = 0
             else:
-                pass
+                msgbox(ctrl.del_stud(del_stud), 'Отчет')
         elif choice == choices[2]:
             lvl = 2
         elif choice == choices[3]:
@@ -138,8 +138,6 @@ while True:
         fieldNames  =  ["Месяц"]
         sample5 = []
         sample5 = multenterbox(msg, title, fieldNames)
-        print(sample5)
-        print(type(sample5[0]))
         if sample5 == None:
             lvl = 3
         else:
