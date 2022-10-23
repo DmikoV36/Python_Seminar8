@@ -97,7 +97,8 @@ while True:
         if sample1 == None:
             lvl = 3
         else:
-            pass
+            msgbox(ctrl.search_info_stud(sample1), 'Отчет')
+            lvl = 0
     elif lvl == 5:
         msg = "Введите ФИО ученика: "
         title = "Классный руководитель ученика"
@@ -107,7 +108,8 @@ while True:
         if sample2 == None:
             lvl = 3
         else:
-            pass
+            msgbox(f'Классный руководитель - {ctrl.search_info_classroom_teacher_stud(sample2)}', 'Отчет')
+            lvl = 0
     elif lvl == 6:
         msg = "Введите ФИО ученика: "
         title = "Телефон родителя"
@@ -117,7 +119,8 @@ while True:
         if sample3 == None:
             lvl = 3
         else:
-            pass
+            msgbox(f'Телефон родителя - {ctrl.search_info_phone_perents_stud(sample3)}', 'Отчет')
+            lvl = 0
     elif lvl == 7:
         msg = "Введите класс: "
         title = "Ученики класса"
@@ -127,7 +130,8 @@ while True:
         if sample4 == None:
             lvl = 3
         else:
-            pass
+            msgbox({ctrl.search_info_class_stud(sample4)}, f'Ученики {sample4} класса')
+            lvl = 0
     elif lvl == 8:
         msg = "Введите месяц: "
         title = "Именинники месяца"

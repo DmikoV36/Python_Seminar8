@@ -50,3 +50,36 @@ def edit_stud(list1, list2, list3):
             save()
             ret_msg = "Информация изменена."
     return ret_msg
+################################################################### кодинг новый ########################################
+def search_info_stud(list1): # для lvl == 4:
+    ret_msg = "Ученик не найден в системе."
+    for i in range(len(data_base)):
+        if data_base[i][0] == list1[0] and data_base[i][1] == list1[1]:
+            ret_msg = data_base[i]
+            print(ret_msg)
+    return ret_msg
+
+def search_info_classroom_teacher_stud(list1): # для lvl == 5:
+    ret_msg = "Ученик не найден в системе."
+    for i in range(len(data_base)):
+        if data_base[i][0] == list1[0] and data_base[i][1] == list1[1]:
+            ret_msg = data_base[i][4]
+    return ret_msg
+
+def search_info_phone_perents_stud(list1): # для lvl == 6:
+    ret_msg = "Ученик не найден в системе."
+    for i in range(len(data_base)):
+        if data_base[i][0] == list1[0] and data_base[i][1] == list1[1]:
+            ret_msg = data_base[i][6]
+    return ret_msg
+
+def search_info_class_stud(group): # для lvl == 7:
+    ret_msg = "Класс не найден в системе."
+    all_list = []
+    for i in range(len(data_base)):
+        if group == data_base[i][3]:
+            # class_list = [data_base[i][3], data_base[i][0], data_base[i][1]]
+            all_list.append(data_base[i][0], data_base[i][1])
+    if all_list != []:
+        ret_msg = all_list             
+    return ret_msg
