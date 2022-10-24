@@ -25,8 +25,8 @@
 Функции информационной системы:
 1. Добавить ученика в БД
 
-![img_3](https://user-images.githubusercontent.com/107861149/197414002-dfcf3aa1-2ef6-46aa-bdbf-e7491441bfbe.jpg)
-![img_4](https://user-images.githubusercontent.com/107861149/197414025-ade0bfc3-4050-49b0-9cae-ec9e9b93d216.jpg)
+![img_3](https://user-images.githubusercontent.com/107861149/197484207-30722e51-9fde-4edc-9fb7-fdb1568c6577.jpg)
+![img_4](https://user-images.githubusercontent.com/107861149/197484226-cc1399a7-1566-426d-aae0-65dca2bb22f7.jpg)
 
 2. Удалить ученика из БД
 
